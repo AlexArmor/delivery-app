@@ -1,0 +1,41 @@
+.SideBar {
+  height: 85vh;
+  padding: 30px 50px;
+  display: inline-block;
+  border: solid 1px black;
+  border-radius: 5px;
+  overflow: auto;
+  flex-shrink: 1;
+}
+
+.listItemsTitle {
+  margin-bottom: 14px;
+  text-align: center;
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.listItems {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.btn {
+  width: 130px;
+  height: 50px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 500ms ease;
+}
+
+.btn:hover {
+  background-color: rgb(187, 187, 187);
+}
+
+.btn:active {
+  background-color: rgb(100, 100, 100);
+  color: white;
+}

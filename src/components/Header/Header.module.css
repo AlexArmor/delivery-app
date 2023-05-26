@@ -1,0 +1,27 @@
+.Header {
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+ul.nav {
+  list-style: none;
+}
+
+ul.nav li {
+  display: inline;
+  margin-left: 25px;
+}
+
+.navItem {
+  cursor: pointer;
+  transition: opacity 500ms ease;
+}
+
+.dividingLine {
+  font-size: 20px;
+}
+
+.navItem:hover {
+  opacity: 0.5;
+}
