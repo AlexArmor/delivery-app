@@ -1,12 +1,49 @@
 .img {
   transition: transform 500ms ease;
-}
-
-.img:hover {
-  transform: scale(1.05);
+  &:hover {
+    transform: scale(1.05);
+  }
 }
 
 .title {
   margin: 10px 20px;
   font-size: 16px;
+  color: #333;
+}
+
+.price {
+  margin-left: 20px;
+  font-size: 16px;
+  color: green;
+  font-weight: 600;
+}
+
+.thumb {
+  display: flex;
+  margin: 0 auto;
+  height: 150px;
+  width: auto;
+  overflow: hidden;
+  border-radius: 10px;
+  border: 1px solid #c3c3c3;
+  position: relative;
+}
+
+.addToCart {
+  position: absolute;
+  right: 20px;
+  bottom: 15px;
+  background: #ce1515;
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  line-height: 35px;
+  color: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 500ms ease;
+  &:hover {
+    transform: scale(1.5) translateY(-5px);
+  }
 }

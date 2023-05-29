@@ -1,0 +1,38 @@
+.orderItem {
+  width: 100%;
+  float: left;
+  margin-bottom: 20px;
+}
+
+.orderItem img {
+  width: 70px;
+  float: left;
+  margin-right: 20px;
+}
+
+.orderItem .title {
+  margin: 10px 20px;
+  font-size: 14px;
+  color: #333;
+}
+
+.orderItem .price {
+  margin-left: 20px;
+  font-size: 16px;
+  color: green;
+  font-weight: 600;
+}
+
+.deleteIcon {
+  color: rgb(200, 0, 0);
+  float: right;
+  position: relative;
+  top: -25px;
+  right: 20px;
+  cursor: pointer;
+  transition: all 500ms ease;
+  &:hover {
+    color: red;
+    transform: scale(1.5);
+  }
+}
