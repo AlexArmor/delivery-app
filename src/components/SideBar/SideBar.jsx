@@ -1,17 +1,18 @@
 import React from "react";
 import css from "./SideBar.module.css";
 
-export default function SideBar({ items }) {
-  const shops = items.map((el) => {
-    return Object.keys(el)[0];
-  });
+export default function SideBar({ shops, chooseShop }) {
   return (
     <section className={css.SideBar}>
       <span className={css.listItemsTitle}>Shops:</span>
       <ul className={css.listItems}>
         {shops.map((company, index) => (
-          <li key={index} className={css.item}>
-            <button type="button" className={css.btn}>
+          <li key={company} className={css.item}>
+            <button
+              type="button"
+              className={css.btn}
+              onClick={() => chooseShop(company)}
+            >
               {company}
             </button>
           </li>
