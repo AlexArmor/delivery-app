@@ -1,34 +1,87 @@
 .orderItem {
   width: 100%;
-  float: left;
+  display: flex;
   margin-bottom: 20px;
+  align-items: center;
+  justify-content: space-between;
+  /* gap: 30px; */
 }
 
 .orderItem img {
   width: 70px;
-  float: left;
-  margin-right: 20px;
 }
 
 .orderItem .title {
-  margin: 10px 20px;
+  width: 70px;
+  margin-bottom: 5px;
   font-size: 14px;
   color: #333;
+  word-wrap: break-word;
 }
 
 .orderItem .price {
-  margin-left: 20px;
+  width: 70px;
   font-size: 16px;
   color: green;
   font-weight: 600;
 }
 
+.mathSymbolsList {
+  position: relative;
+  display: flex;
+  gap: 1px;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff;
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 20px;
+    width: 1px;
+    background-color: #fff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: auto;
+  }
+}
+
+.minus,
+.plus {
+  width: 30px;
+  height: 20px;
+  text-align: center;
+  cursor: pointer;
+  background-color: rgb(213, 0, 0);
+  color: #fff;
+  border: none;
+
+  &:disabled {
+    background-color: gray;
+    cursor: not-allowed;
+  }
+}
+
+.minus {
+  border-radius: 10px 0 0 10px;
+}
+
+.plus {
+  border-radius: 0 10px 10px 0;
+}
+
+.quantity {
+  font-size: 16px;
+  font-weight: 600;
+}
+
 .deleteIcon {
   color: rgb(200, 0, 0);
-  float: right;
-  position: relative;
-  top: -25px;
-  right: 20px;
   cursor: pointer;
   transition: all 500ms ease;
   &:hover {

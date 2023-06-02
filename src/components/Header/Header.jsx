@@ -1,51 +1,79 @@
-import { useState } from "react";
-import { Outlet, NavLink } from "react-router-dom";
+import { useState, useEffect, Suspense } from "react";
+import { Outlet, NavLink, Link, useParams } from "react-router-dom";
 import { FaShoppingCart } from "react-icons/fa";
 import classNames from "classnames";
 import css from "./Header.module.css";
 import Order from "../Order/Order";
 
-export default function Header({ order, onDelete }) {
+import { useSelector } from "react-redux";
+
+export default function Header() {
+  const { cart } = useParams();
   const [cartOpen, setCartOpen] = useState(false);
+  const [isShoppingCartShown, setIsShoppingCartShown] = useState(true);
+
+  useEffect(() => {
+    if (cart) {
+      setIsShoppingCartShown(false);
+    } else {
+      setIsShoppingCartShown(true);
+    }
+  }, [cart]);
+
+  const order = useSelector((state) => state.order.items);
 
   let total = 0;
-  order.forEach((el) => (total += Number.parseFloat(el.price)));
+  order.forEach((el) => (total += Number.parseFloat(el.price) * el.quantity));
 
   return (
-    <div className={css.Header}>
-      <ul className={css.nav}>
-        <li className={classNames(css.navItem, css.shop)}>
-          <NavLink
-            to="/"
-            className={({ isActive }) =>
-              classNames(css.NavLink, { [css.active]: isActive })
-            }
+    <>
+      <div className={css.Header}>
+        <ul className={css.nav}>
+          <li className={classNames(css.navItem, css.shop)}>
+            <NavLink
+              // onClick={() => setIsShoppingCartShown(true)}
+              to="/"
+              className={({ isActive }) =>
+                classNames(css.NavLink, { [css.active]: isActive })
+              }
+            >
+              Shop
+            </NavLink>
+          </li>
+          <li
+            className={classNames(css.navItem, css.shoppingCart)}
+            onMouseEnter={() => {
+              if (isShoppingCartShown) setCartOpen(true);
+            }}
+            onMouseLeave={() => setCartOpen(false)}
           >
-            Shop
-          </NavLink>
-        </li>
-        <li
-          className={classNames(css.navItem, css.shoppingCart)}
-          onMouseEnter={() => setCartOpen(true)}
-          onMouseLeave={() => setCartOpen(false)}
-        >
-          <NavLink
-            to="/cart"
-            className={({ isActive }) =>
-              classNames(css.NavLink, { [css.active]: isActive })
-            }
-          >
-            Shopping Cart
-            <FaShoppingCart className={css.shoppingCartIcon} />
+            {order.length > 0 && <span className={css.redCircle}></span>}
+            <NavLink
+              onClick={() => setCartOpen(false)}
+              to="/cart"
+              className={({ isActive }) =>
+                classNames(css.NavLink, { [css.active]: isActive })
+              }
+            >
+              Shopping Cart
+              <FaShoppingCart className={css.shoppingCartIcon} />
+            </NavLink>
             {cartOpen && (
               <div className={css.cartWindow}>
                 {order.length > 0 ? (
                   <div>
                     {order.map((el) => (
-                      <Order key={el.id} item={el} onDelete={onDelete} />
+                      <Order key={"cart-" + el.id} item={el} />
                     ))}
                     <p className={css.total}>
                       Total: {new Intl.NumberFormat().format(total)}$
+                      <Link
+                        onClick={() => setCartOpen(false)}
+                        to="/cart"
+                        className={css.linkToOrder}
+                      >
+                        Go to Checkout
+                      </Link>
                     </p>
                   </div>
                 ) : (
@@ -55,9 +83,14 @@ export default function Header({ order, onDelete }) {
                 )}
               </div>
             )}
-          </NavLink>
-        </li>
-      </ul>
-    </div>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <Suspense>
+          <Outlet />
+        </Suspense>
+      </div>
+    </>
   );
 }

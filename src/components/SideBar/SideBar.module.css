@@ -29,13 +29,16 @@
   border-radius: 5px;
   cursor: pointer;
   transition: all 500ms ease;
+  &:hover {
+    background-color: rgb(187, 187, 187);
+  }
+  &:active {
+    background-color: rgb(100, 100, 100);
+    color: white;
+  }
 }
 
-.btn:hover {
-  background-color: rgb(187, 187, 187);
-}
-
-.btn:active {
+.active {
   background-color: rgb(100, 100, 100);
   color: white;
 }

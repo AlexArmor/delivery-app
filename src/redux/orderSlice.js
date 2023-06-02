@@ -5,15 +5,31 @@ const orderInitialState = { items: [] };
 const orderSlice = createSlice({
     name: 'order',
     initialState: orderInitialState,
-    redusers: {
+    reducers: {
         addToOrder(state, { payload }) {
-            state.items = [...state.items, payload];
+            let isInArray = false;
+            state.items.forEach((el) => {
+                if (payload.id === el.id) isInArray = true;
+            });
+            if (!isInArray) state.items = [...state.items, payload];
         },
         deleteOrder(state, { payload }) {
             state.items = state.items.filter(order => order.id !== payload);
         },
+        increaseQuantity(state, { payload }) {
+            state.items.forEach(order =>
+                order.id === payload
+                    ? order.quantity++
+                    : order.quantity);
+        },
+        decreaseQuantity(state, { payload }) {
+            state.items.forEach(order =>
+                (order.id === payload && order.quantity !== 1)
+                    ? order.quantity--
+                    : order.quantity);
+        },
     },
 });
 
-export const { addToOrder, deleteOrder } = orderSlice.actions;
+export const { addToOrder, deleteOrder, increaseQuantity, decreaseQuantity } = orderSlice.actions;
 export const orderReducer = orderSlice.reducer;

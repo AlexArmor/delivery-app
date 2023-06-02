@@ -25,14 +25,3 @@ img {
   height: auto;
   object-fit: cover;
 }
-
-.wrapper {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-.main {
-  display: flex;
-  gap: 20px;
-}

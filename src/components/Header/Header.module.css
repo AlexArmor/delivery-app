@@ -1,7 +1,10 @@
 .Header {
   font-weight: 600;
   font-size: 14px;
-  margin-bottom: 20px;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 20px;
+  padding-bottom: 0;
 }
 
 ul.nav {
@@ -13,49 +16,62 @@ ul.nav {
 
 .shop {
   position: relative;
-}
-
-.shop::before {
-  content: "";
-  display: block;
-  position: absolute;
-  height: 20px;
-  width: 2px;
-  background-color: #333;
-  top: 50%;
-  right: -25px;
-  transform: translate(-50%, -50%);
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 20px;
+    width: 2px;
+    background-color: #333;
+    top: 50%;
+    right: -25px;
+    transform: translate(-50%, -50%);
+    cursor: auto;
+  }
 }
 
 .navItem {
   cursor: pointer;
-  transition: color 500ms ease;
   z-index: 100;
-  border-bottom: 2px solid black;
 }
 
-.navItem.active {
-  border-bottom: solid 2px black;
+.NavLink {
+  color: #222;
+  transition: color 500ms ease;
+  &.active {
+    border-bottom: solid 2px #222;
+  }
+  &:hover {
+    color: darkgray;
+  }
 }
 
 .dividingLine {
   font-size: 20px;
 }
 
-.navItem:hover {
-  color: darkgray;
-}
-
 .shoppingCart {
   display: flex;
   align-items: center;
   gap: 2px;
+  position: relative;
+}
+
+.redCircle {
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  border-radius: 50%;
+  background-color: red;
+  display: block;
+  width: 10px;
+  height: 10px;
 }
 
 .cartWindow {
   position: absolute;
-  top: 37px;
-  left: 20px;
+  top: 18px;
+  left: -27px;
   width: 400px;
   background-color: #fafafa;
   border: 1px solid green;
@@ -74,10 +90,22 @@ ul.nav {
 }
 
 .total {
-  float: left;
+  /* float: left; */
   width: 100%;
   font-weight: 600;
   font-size: 20px;
   margin-bottom: 20px;
   color: #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.linkToOrder {
+  /* float: right; */
+  background-color: green;
+  color: white;
+  padding: 10px;
+  font-size: 20px;
+  border-radius: 5px;
 }
