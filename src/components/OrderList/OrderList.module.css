@@ -1,0 +1,13 @@
+.orderList {
+  width: 55%;
+  height: 60vh;
+  padding: 30px;
+
+  border: solid 1px black;
+  border-radius: 5px;
+  overflow-y: scroll;
+}
+
+.orderListItem {
+  margin-bottom: 20px;
+}

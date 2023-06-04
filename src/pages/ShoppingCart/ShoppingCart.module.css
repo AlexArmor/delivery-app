@@ -5,29 +5,79 @@
 }
 
 .clientData {
-  height: 85vh;
-  border: solid 1px black;
-  border-radius: 5px;
-  padding: 30px 80px 50px 30px;
   display: flex;
   flex-direction: column;
+  gap: 40px;
+  height: 60vh;
+  width: 43%;
+  padding: 50px 80px 100px 30px;
+  margin-bottom: 40px;
+
+  border: solid 1px black;
+  border-radius: 5px;
 }
 
 label {
   display: flex;
   flex-direction: column;
+  gap: 10px;
 }
 
 input {
-  height: 30px;
+  height: 40px;
   border-radius: 5px;
+  font-size: 20px;
+}
+
+.contentBlock {
+  display: flex;
+  justify-content: space-between;
+}
+
+.empty {
+  height: 80vh;
+  width: 100%;
+  border: solid 1px black;
+  border-radius: 5px;
+  text-align: center;
+  padding: 20px;
+  font-size: 3vw;
+}
+
+.empty h2 {
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+.linkToShop {
+  background-color: green;
+  color: white;
+  padding: 20px;
+  font-size: 20px;
+  border-radius: 5px;
+  &:hover {
+    background-color: darkgreen;
+  }
+}
+
+.summarizing {
+  display: flex;
+  justify-content: right;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: 60px;
+  row-gap: 20px;
+}
+
+.total {
+  font-weight: 600;
+  font-size: 22px;
 }
 
 .btnSubmit {
-  width: 160px;
   background-color: green;
   color: white;
-  padding: 10px;
+  padding: 14px 70px;
   font-size: 20px;
   border-radius: 10px;
   cursor: pointer;
