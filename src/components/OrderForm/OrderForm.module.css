@@ -1,0 +1,53 @@
+.clientData {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  height: 60vh;
+  width: 43%;
+  padding: 50px 50px 100px 30px;
+
+  border: solid 1px black;
+  border-radius: 5px;
+}
+
+.contentBlock {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input {
+  height: 40px;
+  border-radius: 5px;
+  font-size: 20px;
+  padding: 0 10px;
+}
+
+.summarizing {
+  display: flex;
+  justify-content: right;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: 60px;
+  row-gap: 20px;
+}
+
+.total {
+  font-weight: 600;
+  font-size: 22px;
+}
+
+.btnSubmit {
+  background-color: green;
+  color: white;
+  padding: 14px 70px;
+  font-size: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+}

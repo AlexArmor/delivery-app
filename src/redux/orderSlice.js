@@ -28,8 +28,11 @@ const orderSlice = createSlice({
                     ? order.quantity--
                     : order.quantity);
         },
+        resetOrder(state) {
+            state.items = [];
+        },
     },
 });
 
-export const { addToOrder, deleteOrder, increaseQuantity, decreaseQuantity } = orderSlice.actions;
+export const { addToOrder, deleteOrder, increaseQuantity, decreaseQuantity, resetOrder } = orderSlice.actions;
 export const orderReducer = orderSlice.reducer;
