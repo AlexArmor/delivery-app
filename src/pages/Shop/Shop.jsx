@@ -8,7 +8,7 @@ export default function Shop() {
     {
       id: 1001,
       title: "Big Kruck",
-      img: "https://ikura.ua/Media/images/catalog_tree/medium/74603cc72ca26bd5c0ce5914b1dbd6d6.jpg",
+      img: "https://ks.biz.ua/wp-content/uploads/2022/10/photo_2023-02-04_21-02-40-300x300.jpg",
       price: "10.99",
       shop: "McDucks",
       quantity: 1,
@@ -24,7 +24,7 @@ export default function Shop() {
     {
       id: 1003,
       title: "Mac Book",
-      img: "https://friendscafe.com.ua/wp-content/uploads/2022/07/monica-s-burger-300x300.jpg",
+      img: "https://tl-family.com/wp-content/uploads/2021/12/6.-burher-Tekhas-300x300.jpg",
       price: "30.45",
       shop: "McDucks",
       quantity: 1,
@@ -64,7 +64,7 @@ export default function Shop() {
     {
       id: 2004,
       title: "Beak Burger",
-      img: "https://friendscafe.com.ua/wp-content/uploads/2022/01/fish-burger-300x300.jpg",
+      img: "https://pastagrill.com.ua/wp-content/uploads/2022/07/405_burger-z-khrustkoyu-kurkoyu-300x300.jpg",
       price: "43.05",
       shop: "KRC",
       quantity: 1,
